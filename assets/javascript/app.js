@@ -1,14 +1,14 @@
 $(document).ready(function () {
     // Your web app's Firebase configuration
     const firebaseConfig = {
-        apiKey: "AIzaSyCu3TmOx32P7nj2P1lW-u9mTiKgrHKCvkA",
-        authDomain: "test-project-21c2a.firebaseapp.com",
-        databaseURL: "https://test-project-21c2a.firebaseio.com",
-        projectId: "test-project-21c2a",
-        storageBucket: "test-project-21c2a.appspot.com",
-        messagingSenderId: "332271622227",
-        appId: "1:332271622227:web:6c1b5cbb4874911c"
-    };
+        apiKey: "AIzaSyCetfxI4nfJkc8PXbLNygiB_4vgMySCk5s",
+        authDomain: "get-money-get-paid.firebaseapp.com",
+        databaseURL: "https://get-money-get-paid.firebaseio.com",
+        projectId: "get-money-get-paid",
+        storageBucket: "get-money-get-paid.appspot.com",
+        messagingSenderId: "688925742228",
+        appId: "1:688925742228:web:26e13af25c9c22e3"
+      };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     const database = firebase.database();
