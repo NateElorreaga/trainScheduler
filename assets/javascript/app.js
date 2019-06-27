@@ -20,13 +20,22 @@ $(document).ready(function () {
             var tName = childData.name;
             var tDestination = childData.destination;
             var tFrequency = childData.frequency;
-            var tNextArrival = 0;
-            var tMinutesAway = 0;
+       
+ 
+            var currentTime = moment();
+            var convertFirstTime = moment(childData.firstTrain, "HH:mm").subtract(1,"years");
+            console.log(convertFirstTime);
+
+            var difference = currentTime.diff(moment(convertFirstTime), "minutes");
+            var timeRemainder = difference % tFrequency;
+            var tMinutesAway = tFrequency - timeRemainder;
+            var tnextTrain = currentTime.add(tMinutesAway, "minutes");
+            var nextTrainArrival = moment(tnextTrain).format("hh:mm");
 
             $(".schedule-data").append("<tr><td>" + tName +
                 "</td><td>" + tDestination +
                 "</td><td>" + tFrequency +
-                "</td><td>" + tNextArrival +
+                "</td><td>" + nextTrainArrival +
                 "</td><td>" + tMinutesAway +
                 "</td></tr>");
 
@@ -56,11 +65,6 @@ $(document).ready(function () {
             frequency: frequency,
             dateAdded: firebase.database.ServerValue.TIMESTAMP
         });
-        trainTimes();
     });
-
-    //train calculations
-    function trainTimes() {
-    };
 });
 
